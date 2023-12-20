@@ -16,5 +16,10 @@ public class DemoController {
         return "yes you are doing good";
     }
 
+    @GetMapping("/401")
+    public String demo1(){
+        return "yes you are doing good";
+    }
+
 
 }

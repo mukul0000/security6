@@ -35,6 +35,6 @@ public class RegisterServicesImpl implements RegisterService {
 
         var token  = jwtService.generateToken(user);
 
-        return ResponseDto.builder().data(token).build();
+        return ResponseDto.builder().data(token).message("scuess").status(true).build();
     }
 }

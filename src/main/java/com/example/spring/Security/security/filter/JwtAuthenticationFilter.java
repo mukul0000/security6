@@ -35,6 +35,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
        //1. first we are check weather we have token or not
         final String authHeader = request.getHeader("Authorization");
 
+        System.out.println("++++Auth"+authHeader);
+
         final String jwt;
         final String userEmail;
         //2. now we are check weather we have token or not
@@ -56,6 +58,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 //           1.3 . then update the Security context
            UserDetails userDetails = this.userDetailsService.loadUserByUsername(userEmail);
 
+           System.out.println("userDetails" + userDetails);
 
            if(jwtService.isTokenValid(jwt,userDetails)){
                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
